@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "juc6UxySUDw=",
+  "dgSpecHash": "MiLxrJjrBaM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS\\CMCS.csproj",
+  "projectFilePath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\CMCS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aidan\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\aidan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

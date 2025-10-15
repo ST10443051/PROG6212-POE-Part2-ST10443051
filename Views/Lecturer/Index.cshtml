@@ -12,60 +12,36 @@
     <a asp-controller="Lecturer" class="btn-action" asp-action="Create">Add</a>
 </div>
 
-@* Table for all the created Lecturer rofiles *@
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LecturerID)
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Functions
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                0
-            </td>
-            <td>
-                John Doe
-            </td>
-            <td>
-                johndoe@gmail.com
-            </td>
-            <td class="actions">
-                <a asp-controller="Claims" class="btn-action" asp-action="Index">View Profile</a>
-                <a asp-controller="Lecturer" class="btn-action" asp-action="Delete">Delete</a>
-            </td>
-        </tr>
-
-        @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
-
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                Jane Doe
-            </td>
-            <td>
-                janedoe2005@yahoo.com
-            </td>
-            <td class="actions">
-                @* Temporary links *@
-                @Html.ActionLink("View Prfofile", "Index", new { /* id=item.PrimaryKey */ })
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-    </tbody>
-</table>
+@if (Model == null || !Model.Any())
+{
+    <h3>No lecturers :(</h3>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.LecturerID)</th>
+                <th>@Html.DisplayNameFor(model => model.name)</th>
+                <th>@Html.DisplayNameFor(model => model.email)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lecturer in Model)
+            {
+                <tr>
+                    <td>@lecturer.LecturerID</td>
+                    <td>@lecturer.name</td>
+                    <td>@lecturer.email</td>
+                    <td>
+                        <a asp-controller="Claims" asp-action="Index" class="btn btn-primary btn-sm">View Profile</a>
+                        <a asp-controller="Lecturer" asp-action="Delete" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 <a asp-controller="Home" class="btn-action" style="margin-top: 20px" asp-action="Index">Back to Home</a>

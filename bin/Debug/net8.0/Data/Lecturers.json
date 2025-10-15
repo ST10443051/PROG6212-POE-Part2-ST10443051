@@ -1,0 +1,14 @@
+[
+  {
+    "LecturerID": 1,
+    "name": "Aidan",
+    "email": "aidanbnks@gmail.com",
+    "claimIDs": []
+  },
+  {
+    "LecturerID": 2,
+    "name": "John",
+    "email": "cafaw82478@birige.com",
+    "claimIDs": []
+  }
+]
