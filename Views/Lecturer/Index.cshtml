@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CMCS.Models.Lecturer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lecturers</h1>
+
+@* Card to create Lecturer profile *@
+<div class="card" style="margin-bottom: 20px">
+    <h2>Add new Lecturer</h2>
+    <a asp-controller="Lecturer" class="btn-action" asp-action="Create">Add</a>
+</div>
+
+@* Table for all the created Lecturer rofiles *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LecturerID)
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Functions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                0
+            </td>
+            <td>
+                John Doe
+            </td>
+            <td>
+                johndoe@gmail.com
+            </td>
+            <td class="actions">
+                <a asp-controller="Claims" class="btn-action" asp-action="Index">View Profile</a>
+                <a asp-controller="Lecturer" class="btn-action" asp-action="Delete">Delete</a>
+            </td>
+        </tr>
+
+        @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
+
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                Jane Doe
+            </td>
+            <td>
+                janedoe2005@yahoo.com
+            </td>
+            <td class="actions">
+                @* Temporary links *@
+                @Html.ActionLink("View Prfofile", "Index", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a asp-controller="Home" class="btn-action" style="margin-top: 20px" asp-action="Index">Back to Home</a>

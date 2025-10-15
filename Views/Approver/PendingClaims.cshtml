@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CMCS.Models.Claim>
+
+@{
+    ViewData["Title"] = "PendingClaims";
+}
+
+<h1>Pending Claims</h1>
+
+@* Table for all the pending claims *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.claimID)
+            </th>
+            <th>
+                Lecturer Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                Functions
+            </th>
+        </tr>
+    </thead>
+
+    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
+
+    <tbody>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                John Doe
+            </td>
+            <td>
+                R 5000
+            </td>
+            <td>
+                Pending
+            </td>
+            <td class="btn-verification">
+                <a asp-controller="Approver" class="btn-verification" asp-action="Functions">Verify</a>
+                <a asp-controller="Approver" class="btn-verification" asp-action="DeclinePOST">Decline</a>
+                <a asp-controller="SupportDocument" class="btn-verification" asp-action="IndexApprover">View Documents</a>
+            </td>
+        </tr>
+@* @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.claimID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+} *@
+    </tbody>
+</table>
+
+<a asp-controller="Approver" class="btn-action" asp-action="Functions">Back to Functions</a>

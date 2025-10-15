@@ -1,0 +1,49 @@
+﻿@model CMCS.Models.SupportDocument
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SupportDocument</h4>
+<hr />
+
+@* Creation screen for adding a support document tied to the specific claim *@
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="fileName" class="control-label"></label>
+                <input asp-for="fileName" class="form-control" />
+                <span asp-validation-for="fileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fileType" class="control-label"></label>
+                <input asp-for="fileType" class="form-control" />
+                <span asp-validation-for="fileType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="uploadDate" class="control-label"></label>
+                <input asp-for="uploadDate" class="form-control" />
+                <span asp-validation-for="uploadDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="uploadedFile" class="form-label">Select a file:</label>
+                <input type="file" name="uploadedFile" id="uploadedFile" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

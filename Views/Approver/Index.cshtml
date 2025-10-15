@@ -1,0 +1,88 @@
+﻿@model IEnumerable<CMCS.Models.Approver>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Approvers</h1>
+
+@* Card to create Approver profile *@
+<div class="card" style="margin-bottom: 20px">
+    <h2>Add new Approver</h2>
+    <a asp-controller="Approver" class="btn-action" asp-action="Create">Add</a>
+</div>
+
+@* Table for all the created Approver profiles *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.approverID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
+            </th>
+            <th>
+                Functions
+            </th>
+        </tr>
+    </thead>
+
+    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
+
+    <tbody>
+        <tr>
+            <td>
+                0
+            </td>
+            <td>
+                Mike Smith
+            </td>
+            <td>
+                Programme Coordinator
+            </td>
+            <td class="actions">
+                <a asp-controller="Approver" class="btn-action" asp-action="Functions">View Profile</a>
+                <a asp-controller="Approver" class="btn-action" asp-action="Delete">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                Sam Pence
+            </td>
+            <td>
+                Academic Manager
+            </td>
+            <td class="actions">
+                @Html.ActionLink("View Profile", "Index", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+@* @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.approverID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.role)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+} *@
+    </tbody>
+</table>
+
+<a asp-controller="Home" class="btn-action" style="margin-top: 20px" asp-action="Index">Back to Home</a>

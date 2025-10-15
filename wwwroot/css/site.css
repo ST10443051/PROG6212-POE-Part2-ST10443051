@@ -1,0 +1,226 @@
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus { /*Auto generated*/
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html { /*Sets the font size to 14 pixels for the whole program (freeCodeCamp.org, 2022)*/
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body { /* sets the brackground of all the pages to a grey colour and the margin at the bottom to the size of 60 pixels (freeCodeCamp.org, 2022)*/
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60px;
+    background-color: white;
+}
+
+.welcome { /*Selector class that ads colour shifting effect to thee following text (freeCodeCamp.org, 2022) (The Admin Bar,2024) (Ali Spittel, 2021)*/
+    animation-name: shift;
+    color: transparent;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    animation: shift 15s linear infinite;
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 40px 10px;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+@keyframes shift {
+    /*Keyframes that refer to how the gradient moves in the animation (freeCodeCamp.org, 2022)*/
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.welcome-card { /* Card container for welcome text with shadow and hover transition (The Admin Bar, 2024) */
+    max-width: 600px;
+    margin: 70px auto;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .welcome-card h1 { /* Header inside welcome card styled with spacing */
+        margin-bottom: 5px;
+    }
+
+    .welcome-card:hover { /* Hover effect for welcome card (The Admin Bar, 2024) */
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+.cards { /* Flexbox container for multiple cards with spacing (freeCodeCamp.org, 2022) */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card { /* Individual card styling with padding, shadow, and hover animation (freeCodeCamp.org, 2022) */
+    background: #ffffff;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    padding: 25px 30px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover { /* Hover animation for cards (The Admin Bar, 2024) */
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .card h2 { /* Heading inside card styled with dark text */
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .card p { /* Paragraph text in cards styled smaller with muted tone */
+        color: #555;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+.btn-action { /* Main action button styling with hover/transition (freeCodeCamp.org, 2022) */
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.actions a { /* Action links styled as buttons with spacing */
+    margin: 0 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+    .actions a:nth-child(1) { /* First action button: View Claims */
+        background: #3498db;
+        color: white;
+    }
+
+    .actions a:nth-child(2) { /* Second action button: Delete Lecturer */
+        background: #ff0000;
+        color: white;
+    }
+
+    .actions a:hover { /* Hover effect for action buttons */
+        opacity: 0.8;
+    }
+
+.btn-function { /* Centered function button used for navigation (Ali Spittel, 2021) */
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    justify-content: center;
+    width: fit-content;
+}
+
+a /*Sets all "a" text weight to bold (freeCodeCamp.org, 2022)*/ {
+    font-weight: bold;
+}
+
+h1 { /* Main header styling with larger size and dark text */
+    font-size: 2.2rem;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+a { /* Default link style with blue color */
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    a:hover { /* Hover effect for links */
+        text-decoration: underline;
+        color: #1d6fa5;
+    }
+
+.table { /* Table header with gradient background (freeCodeCamp.org, 2022) */
+    width: 90%;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table thead { /* Table cell padding */
+        background: linear-gradient(45deg, #3498db, #2ecc71);
+        color: white;
+        font-weight: bold;
+        text-align: left;
+    }
+
+.table th, .table td { 
+   padding: 14px 18px;
+}
+
+    .table tbody tr { /* Table row background and hover transition */
+        background: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .table tbody tr:hover { /* Hover effect for table rows */
+            background: #dff9fb;
+            transform: scale(1.01);
+        }
+
+.btn-verification { /* Buttons for verification actions with consistent size */
+    margin: 0 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+    .btn-verification:nth-child(1) { /* Accept/approve verification button */
+        background: #44eb2e;
+        color: white;
+    }
+
+    .btn-verification:nth-child(2) { /* Reject verification button */
+        background: #ff0000;
+        color: white;
+    }
+
+    .btn-verification:nth-child(3) { /* Review verification button */
+        background: #3498db;
+        color: white;
+    }
+
+    .btn-verification:hover { /* Hover effect for verification buttons */
+        opacity: 0.8;
+    }

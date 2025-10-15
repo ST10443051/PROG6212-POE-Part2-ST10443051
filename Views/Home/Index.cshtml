@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* Welcom card text *@
+<div class="welcome-card">
+    <h1 class="welcome">Contract Monthly Claim System</h1>
+    <p style="color: grey">(Work in Progress)</p>
+</div>
+
+@* Cards to access either the Approver View or the Lecturer View *@
+
+<div class="cards">
+    <div class="card">
+        <h2>Lecturer</h2>
+        <p>Submit and manage your monthly claims quickly and easily.</p>
+        <a asp-controller="Lecturer" class="btn-action" asp-action="Index">Go to Lecturer</a>
+    </div>
+
+    <div class="card">
+        <h2>Approver</h2>
+        <p>Review and approve claims submitted by lecturers.</p>
+        <a asp-controller="Approver" class="btn-action" asp-action="Index">Go to Approver</a>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CMCS.Models.SupportDocument>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Support Documents for ClaimID 1</h1>
+
+<div class="card" style="margin-bottom: 20px">
+    <h2>Add Support Document</h2>
+    <a asp-controller="SupportDocument" class="btn-action" asp-action="Create">Add</a>
+</div>
+
+@* Table for all added support documents for the selected claim *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.supportDocumentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uploadDate)
+            </th>
+            <th>
+                Functions
+            </th>
+        </tr>
+    </thead>
+
+    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
+
+    <tbody>
+        <tr>
+            <td>
+                0
+            </td>
+            <td>
+                ExampleFile
+            </td>
+            <td>
+                PDF
+            </td>
+            <td>
+                17-Sep-25 12:02 PM
+            </td>
+            <td class="actions">
+                <a asp-controller="SupportDocument" class="btn-action" asp-action="ViewDocument">View Document</a>
+                <a asp-controller="SupportDocument" class="btn-action" asp-action="Delete">Delete</a>
+
+            </td>
+        </tr>
+@* @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.supportDocumentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fileType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uploadDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+} *@
+    </tbody>
+</table>
+
+<a asp-controller="Claims" class="btn-action" asp-action="Index">Back to Claims Table</a>
+

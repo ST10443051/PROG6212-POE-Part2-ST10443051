@@ -1,0 +1,41 @@
+﻿@model CMCS.Models.Lecturer
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+@* Deletion confirmation for the selected Lecturer profile *@
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Lecturer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LecturerID)
+        </dt>
+        <dd class="col-sm-10">
+            0
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            John Doe
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd class="col-sm-10">
+            johndoe@gmail.com
+        </dd>
+    </dl>
+
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
