@@ -4,8 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Claims from John Doe</h1>
-
 @* Card to add a claim for selected Lecturer profile *@
 
     <div class="card" style="margin-bottom: 20px">
@@ -15,69 +13,40 @@
 
 @* Table for all claims for selected Lecturer profile  *@
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.claimID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.amount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.status)
-            </th>
-            <th>
-                Support Documents
-            </th>
-        </tr>
-    </thead>
+@if (Model == null || !Model.Any())
+{
+    <h3>No claims from Lecturer :(</h3>
+}
+else
+{
+    <h3>Claims from Lecturer</h3>
 
-    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.claimID)</th>
+                <th>@Html.DisplayNameFor(model => model.date)</th>
+                <th>@Html.DisplayNameFor(model => model.amount)</th>
+                <th>@Html.DisplayNameFor(model => model.status)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.claimID</td>
+                    <td>@item.date</td>
+                    <td>@item.amount</td>
+                    <td>@item.status</td>
+                    <td class="actions">
+                        <a asp-controller="SupportDocument" class="btn-action" asp-action="Index">View Documents</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
-    <tbody>
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                17-Sep-25 11:42 AM
-            </td>
-            <td>
-                R50000
-            </td>
-            <td>
-                Pending
-            </td>
-            <td class="actions">
-                <a asp-controller="SupportDocument" class="btn-action" asp-action="Index">View Documents</a>
-            </td>
-        </tr>
-@* @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.claimID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-} *@
-    </tbody>
-</table>
 
 <a asp-controller="Lecturer" class="btn-action" asp-action="Index">Back to Lecturers Table</a>

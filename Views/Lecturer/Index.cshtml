@@ -28,15 +28,16 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var lecturer in Model)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td>@lecturer.LecturerID</td>
-                    <td>@lecturer.name</td>
-                    <td>@lecturer.email</td>
+                    <td>@item.LecturerID</td>
+                    <td>@item.name</td>
+                    <td>@item.email</td>
                     <td>
-                        <a asp-controller="Claims" asp-action="Index" class="btn btn-primary btn-sm">View Profile</a>
-                        <a asp-controller="Lecturer" asp-action="Delete" class="btn btn-danger btn-sm">Delete</a>
+                        <a asp-controller="Claims" asp-action="Index" asp-route-id="@item.LecturerID" class="btn-action">View Profile</a>
+                        <a asp-controller="Lecturer" asp-action="Delete" asp-route-id="@item.LecturerID" class="btn-action">Delete</a>
+
                     </td>
                 </tr>
             }

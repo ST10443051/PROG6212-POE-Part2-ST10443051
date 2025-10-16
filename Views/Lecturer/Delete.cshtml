@@ -17,24 +17,25 @@
             @Html.DisplayNameFor(model => model.LecturerID)
         </dt>
         <dd class="col-sm-10">
-            0
+            @Html.DisplayFor(model => model.LecturerID)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.name)
         </dt>
         <dd class="col-sm-10">
-            John Doe
+            @Html.DisplayFor(model => model.name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.email)
         </dt>
         <dd class="col-sm-10">
-            johndoe@gmail.com
+            @Html.DisplayFor(model => model.email)
         </dd>
     </dl>
 
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="LecturerID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

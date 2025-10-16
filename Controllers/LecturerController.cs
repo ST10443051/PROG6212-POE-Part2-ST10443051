@@ -13,23 +13,16 @@ namespace CMCS.Controllers
         //GET: Index
         public IActionResult Index()
         {
-            try
+            if (System.IO.File.Exists(_filePath))
             {
-                if (System.IO.File.Exists(_filePath))
+                string json = System.IO.File.ReadAllText(_filePath);
+
+                var options = new JsonSerializerOptions
                 {
-                    string json = System.IO.File.ReadAllText(_filePath);
+                    PropertyNameCaseInsensitive = true
+                };
 
-                    var options = new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    };
-
-                    _lecturers = JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
-                }
-            }
-            catch (Exception ex)
-            {
-
+                _lecturers = JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
             }
 
             return View(_lecturers);
@@ -83,9 +76,65 @@ namespace CMCS.Controllers
         }
 
         //GET: Delete
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            if (!System.IO.File.Exists(_filePath))
+            {
+                return NotFound();
+            }
+
+            string json = System.IO.File.ReadAllText(_filePath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            var lecturers = JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
+
+            var lecturer = lecturers.FirstOrDefault(l => l.LecturerID == id);
+            if (lecturer == null)
+            {
+                return NotFound();
+            }
+
+            return View(lecturer);
+        }
+
+        //POST: Delete
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(int id)
+        {
+            string directory = Path.GetDirectoryName(_filePath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            if (!System.IO.File.Exists(_filePath))
+            {
+                return RedirectToAction("Index");
+            }
+
+            string json = System.IO.File.ReadAllText(_filePath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            var lecturers = JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
+
+            var lecturerToRemove = lecturers.FirstOrDefault(l => l.LecturerID == id);
+            if (lecturerToRemove != null)
+            {
+                lecturers.Remove(lecturerToRemove);
+
+                string updatedJson = JsonSerializer.Serialize(lecturers, new JsonSerializerOptions { WriteIndented = true });
+                System.IO.File.WriteAllText(_filePath, updatedJson);
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
