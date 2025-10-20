@@ -4,14 +4,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Support Documents for ClaimID 1</h1>
-
 <div class="card" style="margin-bottom: 20px">
     <h2>Add Support Document</h2>
-    <a asp-controller="SupportDocument" class="btn-action" asp-action="Create">Add</a>
+    <a asp-controller="SupportDocument" asp-action="Create"
+       asp-route-lecturerId="@ViewBag.LecturerID"
+       asp-route-claimId="@ViewBag.ClaimID"
+       class="btn-action">
+       Add
+    </a>
 </div>
 
 @* Table for all added support documents for the selected claim *@
+@if (Model == null || !Model.Any())
+{
+    <h3>No documents uploaded :(</h3>
+}
+else
+{
+    <h3>Documents for @ViewBag.ClaimID</h3>
+
 <table class="table">
     <thead>
         <tr>
@@ -28,56 +39,27 @@
                 @Html.DisplayNameFor(model => model.uploadDate)
             </th>
             <th>
-                Functions
+                Actions
             </th>
         </tr>
     </thead>
 
-    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
-
     <tbody>
-        <tr>
-            <td>
-                0
-            </td>
-            <td>
-                ExampleFile
-            </td>
-            <td>
-                PDF
-            </td>
-            <td>
-                17-Sep-25 12:02 PM
-            </td>
-            <td class="actions">
-                <a asp-controller="SupportDocument" class="btn-action" asp-action="ViewDocument">View Document</a>
-                <a asp-controller="SupportDocument" class="btn-action" asp-action="Delete">Delete</a>
-
-            </td>
-        </tr>
-@* @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.supportDocumentID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fileName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fileType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.uploadDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-} *@
+        @foreach (var document in Model)
+        {
+            <tr>
+                <td>@document.supportDocumentID</td>
+                <td>@document.fileName</td>
+                <td>@document.fileType</td>
+                <td>@document.uploadDate</td>
+                <td>
+                   @*  <a asp-controller="SupportDocument" asp-action="Index" asp-route-claimId="@claim.claimID" class="btn-action">View document</a
+                    <a asp-controller="SupportDocument" asp-action="Delete" asp-route-claimId="@claim.claimID" class="btn-action">Delete</a *@
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-
-<a asp-controller="Claims" class="btn-action" asp-action="Index">Back to Claims Table</a>
+}
+@* <a asp-controller="Claim" class="btn-action" asp-rooute-asp-action="Index">Back to Claims Table</a> *@
 
