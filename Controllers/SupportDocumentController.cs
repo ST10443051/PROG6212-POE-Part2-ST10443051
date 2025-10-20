@@ -84,13 +84,17 @@ namespace CMCS.Controllers
             }
 
             if (uploadedFile == null || uploadedFile.Length == 0)
+            {
                 return BadRequest("No file uploaded.");
+            }
 
             var allowedExtensions = new[] { ".pdf", ".docx", ".xlsx" };
             var fileExtension = Path.GetExtension(uploadedFile.FileName).ToLower();
-            
+
             if (!allowedExtensions.Contains(fileExtension))
+            {
                 return BadRequest("Only PDF, DOCX, and XLSX files are allowed.");
+            }
 
             if (!Directory.Exists(supportPath))
                 Directory.CreateDirectory(supportPath);
@@ -120,9 +124,40 @@ namespace CMCS.Controllers
             return RedirectToAction("Index", new { lecturerId, claimId });
         }
 
-        public IActionResult ViewDocument()
+        public IActionResult ViewDocument(int lecturerId, int claimId, int supportDocumentId)
         {
-            return View();
+            var load = LoadLecturers();
+            var lecturer = load.FirstOrDefault(l => l.LecturerID == lecturerId);
+            if (lecturer == null)
+            {
+                return NotFound("Lecturer not found");
+            }
+
+            var claim = lecturer.claimIDs.FirstOrDefault(c => c.claimID == claimId);
+            if (claim == null)
+            {
+                return NotFound("Claim not found");
+            }
+
+
+            var doc = claim.SupportDocumentIDs.FirstOrDefault(d => d.supportDocumentID == supportDocumentId);
+            if (doc == null)
+            {
+                return NotFound("Document not found");
+            }
+
+            if (!Directory.Exists(supportPath))
+                Directory.CreateDirectory(supportPath);
+
+            string contentType = doc.fileType.ToLower() switch //(OpenAI, 2025)
+            {
+                "pdf" => "application/pdf",
+                "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                _ => "application/octet-stream"
+            };
+
+            return PhysicalFile(doc.filepath, contentType, doc.fileName + "." + doc.fileType);
         }
 
         public IActionResult Delete()

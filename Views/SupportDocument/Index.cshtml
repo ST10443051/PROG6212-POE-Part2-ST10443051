@@ -53,13 +53,22 @@ else
                 <td>@document.fileType</td>
                 <td>@document.uploadDate</td>
                 <td>
-                   @*  <a asp-controller="SupportDocument" asp-action="Index" asp-route-claimId="@claim.claimID" class="btn-action">View document</a
-                    <a asp-controller="SupportDocument" asp-action="Delete" asp-route-claimId="@claim.claimID" class="btn-action">Delete</a *@
+                        <a asp-action="ViewDocument"
+                           asp-route-lecturerId="@ViewBag.LecturerID"
+                           asp-route-claimId="@ViewBag.ClaimID"
+                           asp-route-supportDocumentID="@document.supportDocumentID"
+                           class="btn-action">
+                            View Document
+                        </a>
+                    <a asp-controller="SupportDocument" asp-action="Delete" asp-route-claimId="@document.supportDocumentID" class="btn-action">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 }
-@* <a asp-controller="Claim" class="btn-action" asp-rooute-asp-action="Index">Back to Claims Table</a> *@
+<a asp-controller="Claim" 
+ asp-route-lecturerId="@ViewBag.LecturerID"
+ asp-route-claimId="@ViewBag.ClaimID" 
+ class="btn-action">Back to Claims Table </a>
 

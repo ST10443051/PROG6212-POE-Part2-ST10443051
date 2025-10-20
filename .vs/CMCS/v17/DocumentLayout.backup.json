@@ -11,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:views\\supportdocument\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\data\\lecturers.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:data\\lecturers.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\views\\claim\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:views\\claim\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Lecturers.json",
-              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Data\\Lecturers.json",
-              "RelativeDocumentMoniker": "Data\\Lecturers.json",
-              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Data\\Lecturers.json",
-              "RelativeToolTip": "Data\\Lecturers.json",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\Claim\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Claim\\Index.cshtml",
+              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\Claim\\Index.cshtml",
+              "RelativeToolTip": "Views\\Claim\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-20T16:45:29.396Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T17:15:44.251Z",
               "EditorCaption": ""
             },
             {
@@ -49,7 +49,7 @@
               "RelativeDocumentMoniker": "Views\\SupportDocument\\Index.cshtml",
               "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\SupportDocument\\Index.cshtml",
               "RelativeToolTip": "Views\\SupportDocument\\Index.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-20T16:38:03.25Z",
               "EditorCaption": ""
@@ -62,7 +62,7 @@
               "RelativeDocumentMoniker": "Controllers\\SupportDocumentController.cs",
               "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\SupportDocumentController.cs",
               "RelativeToolTip": "Controllers\\SupportDocumentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAuwJcAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T16:37:59.837Z",
               "EditorCaption": ""
