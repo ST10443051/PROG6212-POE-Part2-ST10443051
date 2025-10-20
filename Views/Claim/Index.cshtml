@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CMCS.Models.Claim>
+@{
+    ViewData["Title"] = "Claim";
+}
+
+<h1>Claims for @ViewBag.LecturerName</h1>
+
+<div class="card" style="margin-bottom:20px">
+    <a asp-action="Create" asp-route-LecturerID="@ViewBag.LecturerID" class="btn-action">Create New Claim</a>
+</div>
+
+@if (Model == null || !Model.Any())
+{
+    <h3>No claims yet :(</h3>
+}
+else
+{
+    <h3>Claims for @ViewBag.LecturerName</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.claimID)</th>
+                <th>@Html.DisplayNameFor(m => m.notes)</th>
+                <th>@Html.DisplayNameFor(m => m.date)</th>
+                <th>@Html.DisplayNameFor(m => m.hoursWorked)</th>
+                <th>@Html.DisplayNameFor(m => m.hourlyRate)</th>
+                <th>@Html.DisplayNameFor(m => m.status)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td>@claim.claimID</td>
+                    <td>@claim.notes</td>
+                    <td>@claim.date</td>
+                    <td>@claim.hoursWorked</td>
+                    <td>@claim.hourlyRate</td>
+                    <td>@claim.status</td>
+                    <td>
+                        <a asp-controller="SupportDocument" asp-action="Index" asp-route-claimId="@claim.claimID" class="btn-action">View Docs</a>
+                        <a asp-controller="Claim" asp-action="Delete" 
+                        asp-route-lecturerId="@ViewBag.LecturerID"
+                        asp-route-claimId="@claim.claimID" 
+                        class="btn-action">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-controller="Lecturer" asp-action="Index" class="btn-action">Back to Lecturers Table</a>

@@ -48,16 +48,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcm92ZXJcUGVuZGluZ0NsYWltcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Claims/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhaW1zXENyZWF0ZS5jc2h0bWw=
+[C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Claim/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhaW1cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Claims/History.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhaW1zXEhpc3RvcnkuY3NodG1s
+[C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Claim/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhaW1cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Claims/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhaW1zXEluZGV4LmNzaHRtbA==
+[C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Claim/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhaW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/aidan/OneDrive/VC Y2/Semester 2/PROG6212/PROG6212 ST10443051 POE Part 2/CMCS P2/Views/Home/Index.cshtml]

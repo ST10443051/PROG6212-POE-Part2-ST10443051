@@ -4,5 +4,11 @@
     "name": "John",
     "email": "cafaw82478@birige.com",
     "claimIDs": []
+  },
+  {
+    "LecturerID": 3,
+    "name": "Jane",
+    "email": "aidanbnks@gmail.com",
+    "claimIDs": []
   }
 ]
