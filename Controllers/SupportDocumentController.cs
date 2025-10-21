@@ -160,19 +160,70 @@ namespace CMCS.Controllers
             return PhysicalFile(doc.filepath, contentType, doc.fileName + "." + doc.fileType);
         }
 
-        public IActionResult Delete()
+        //GET: Delete
+        public IActionResult Delete(int lecturerId, int claimId, int supportDocumentId)
         {
-            return View();
+            var load = LoadLecturers();
+
+            var lecturer = load.FirstOrDefault(l => l.LecturerID == lecturerId);
+            if (lecturer == null)
+            {
+                return NotFound("Lecturer not found");
+            }
+
+            var claim = lecturer.claimIDs.FirstOrDefault(c => c.claimID == claimId);
+            if (claim == null)
+            {
+                return NotFound("Claim not found");
+            }
+
+            var doc = claim.SupportDocumentIDs.FirstOrDefault(d => d.supportDocumentID == supportDocumentId);
+            if (doc == null)
+            {
+                return NotFound("Support Document not found");
+            }
+
+            ViewBag.LecturerID = lecturerId;
+            ViewBag.ClaimID = claimId;
+            ViewBag.SupportDocumentID = supportDocumentId;
+
+            return View(doc);
         }
 
-        public IActionResult IndexApprover()
+        //POST: Delete
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(int lecturerId, int claimId, int supportDocumentId)
         {
-            return View();
-        }
+            var load = LoadLecturers();
 
-        public IActionResult ViewDocumentApprover()
-        {
-            return View();
+            var lecturer = load.FirstOrDefault(l => l.LecturerID == lecturerId);
+            if (lecturer == null)
+            {
+                return NotFound("Lecturer not found");
+            }
+
+            var claim = lecturer.claimIDs.FirstOrDefault(c => c.claimID == claimId);
+            if (claim == null)
+            {
+                return NotFound("Claim not found");
+            }
+
+            var docToRemove = claim.SupportDocumentIDs.FirstOrDefault(d => d.supportDocumentID == supportDocumentId);
+            if (docToRemove == null)
+            {
+                return NotFound("Support Document not found");
+            }
+
+            if (System.IO.File.Exists(docToRemove.filepath))//(OpenAI, 2025)
+            {
+                System.IO.File.Delete(docToRemove.filepath);
+            };
+
+            claim.SupportDocumentIDs.Remove(docToRemove);
+
+            SaveLecturers(load);
+
+            return RedirectToAction("Index", new { lecturerId, claimId });
         }
     }
 }

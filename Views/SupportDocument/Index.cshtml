@@ -53,14 +53,21 @@ else
                 <td>@document.fileType</td>
                 <td>@document.uploadDate</td>
                 <td>
-                        <a asp-action="ViewDocument"
-                           asp-route-lecturerId="@ViewBag.LecturerID"
-                           asp-route-claimId="@ViewBag.ClaimID"
-                           asp-route-supportDocumentID="@document.supportDocumentID"
-                           class="btn-action">
-                            View Document
-                        </a>
-                    <a asp-controller="SupportDocument" asp-action="Delete" asp-route-claimId="@document.supportDocumentID" class="btn-action">Delete</a>
+                    <a asp-controller="SupportDocument" asp-action="ViewDocument"
+                     asp-route-lecturerId="@ViewBag.LecturerID"
+                     asp-route-claimId="@ViewBag.ClaimID"
+                     asp-route-supportDocumentID="@document.supportDocumentID"
+                     class="btn-action">
+                     View Document
+                    </a>
+
+                    <a asp-controller="SupportDocument" asp-action="Delete"
+                     asp-route-lecturerId="@ViewBag.LecturerID"
+                     asp-route-claimId="@ViewBag.ClaimID"
+                     asp-route-supportDocumentId="@document.supportDocumentID"
+                     class="btn-action">
+                     Delete
+                    </a>
                 </td>
             </tr>
         }

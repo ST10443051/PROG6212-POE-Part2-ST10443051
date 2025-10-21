@@ -35,8 +35,17 @@ else
                     <td>@item.name</td>
                     <td>@item.email</td>
                     <td>
-                        <a asp-controller="Claim" asp-action="Index" asp-route-LecturerId="@item.LecturerID" class="btn-action">View Claims</a>
-                        <a asp-controller="Lecturer" asp-action="Delete" asp-route-LecturerId="@item.LecturerID" class="btn-action">Delete</a>
+                        <a asp-controller="Claim" asp-action="Index" 
+                        asp-route-lecturerId="@item.LecturerID" 
+                        class="btn-action">
+                        View Claims
+                        </a>
+
+                        <a asp-controller="Lecturer" asp-action="Delete" 
+                        asp-route-lecturerId="@item.LecturerID" 
+                        class="btn-action">
+                        Delete
+                        </a>
                     </td>
                 </tr>
             }

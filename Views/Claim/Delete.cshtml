@@ -57,8 +57,12 @@
     
     <form asp-action="Delete" method="post">
         <input type="hidden" name="lecturerId" value="@ViewBag.LecturerID" />
-        <input type="hidden" name="claimId" value="@Model.claimID" />
+        <input type="hidden" name="claimId" value="@ViewBag.ClaimID" />
+        <input type="hidden" name="supportDocumentId" value="@ViewBag.SupportDocumentID" />
         <button type="submit" class="btn btn-danger">Confirm Delete</button> |
-        <a asp-action="Index" asp-route-lecturerId="@ViewBag.LecturerID">Cancel</a>
+        <a asp-action="Index" 
+        asp-route-lecturerId="@ViewBag.SupportDocumentID">
+        Cancel
+        </a>
     </form>
 </div>

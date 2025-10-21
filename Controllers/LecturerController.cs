@@ -76,7 +76,7 @@ namespace CMCS.Controllers
         }
 
         //GET: Delete
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int lecturerId)
         {
             if (!System.IO.File.Exists(_filePath))
             {
@@ -92,7 +92,7 @@ namespace CMCS.Controllers
 
             var lecturers = JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
 
-            var lecturer = lecturers.FirstOrDefault(l => l.LecturerID == id);
+            var lecturer = lecturers.FirstOrDefault(l => l.LecturerID == lecturerId);
             if (lecturer == null)
             {
                 return NotFound();
@@ -103,7 +103,7 @@ namespace CMCS.Controllers
 
         //POST: Delete
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeletePOST(int id)
+        public IActionResult DeletePOST(int lecturerId)
         {
             string directory = Path.GetDirectoryName(_filePath);
             if (!Directory.Exists(directory))
@@ -125,7 +125,7 @@ namespace CMCS.Controllers
 
             var lecturers = JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
 
-            var lecturerToRemove = lecturers.FirstOrDefault(l => l.LecturerID == id);
+            var lecturerToRemove = lecturers.FirstOrDefault(l => l.LecturerID == lecturerId);
             if (lecturerToRemove != null)
             {
                 lecturers.Remove(lecturerToRemove);

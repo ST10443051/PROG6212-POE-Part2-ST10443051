@@ -41,14 +41,18 @@ else
                     <td>@claim.status</td>
                     <td>
                         <a asp-controller="SupportDocument" asp-action="Index"
-                           asp-route-lecturerId="@ViewBag.LecturerID"
+                        asp-route-lecturerId="@ViewBag.LecturerID"
                         asp-route-claimId="@claim.claimID"
-                        class="btn-action">View Docs</a>
+                        class="btn-action">
+                        View Docs
+                        </a>
 
                         <a asp-controller="Claim" asp-action="Delete" 
                         asp-route-lecturerId="@ViewBag.LecturerID"
                         asp-route-claimId="@claim.claimID" 
-                        class="btn-action">Delete</a>
+                        class="btn-action">
+                        Delete
+                        </a>
                     </td>
                 </tr>
             }

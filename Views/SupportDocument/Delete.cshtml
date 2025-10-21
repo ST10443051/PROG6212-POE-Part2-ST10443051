@@ -17,30 +17,39 @@
             @Html.DisplayNameFor(model => model.supportDocumentID)
         </dt>
         <dd class = "col-sm-10">
-            0
+            @Html.DisplayFor(model => model.supportDocumentID)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.fileName)
         </dt>
         <dd class = "col-sm-10">
-            ExampleFile
+            @Html.DisplayFor(model => model.fileName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.fileType)
         </dt>
         <dd class = "col-sm-10">
-            PDF
+            @Html.DisplayFor(model => model.fileType)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.uploadDate)
         </dt>
         <dd class = "col-sm-10">
-            17-Sep-25 12:02 PM
+            @Html.DisplayFor(model => model.uploadDate)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="lecturerId" value="@ViewBag.LecturerID" />
+        <input type="hidden" name="claimId" value="@ViewBag.ClaimID" />
+        <input type="hidden" name="supportDocumentId" value="@ViewBag.SupportDocumentID" />
+
+        <button type="submit" class="btn btn-danger">Confirm Delete</button> |
+        <a asp-action="Index"
+           asp-route-lecturerId="@ViewBag.LecturerID"
+           asp-route-claimId="@ViewBag.ClaimID"
+           class="btn btn-secondary">
+           Cancel
+        </a>
     </form>
 </div>
