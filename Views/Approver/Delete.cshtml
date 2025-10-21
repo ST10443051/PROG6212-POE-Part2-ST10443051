@@ -14,27 +14,28 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.approverID)
+            @Html.DisplayNameFor(model => model.ApproverID)
         </dt>
         <dd class = "col-sm-10">
-            0
+            @Html.DisplayFor(model => model.ApproverID)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.name)
         </dt>
         <dd class = "col-sm-10">
-            Mike Smith
+            @Html.DisplayFor(model => model.name)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.role)
         </dt>
         <dd class = "col-sm-10">
-            Programme Coordinator
+            @Html.DisplayFor(model => model.role)
         </dd>
     </dl>
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ApproverID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index">Cancel</a>
     </form>
 </div>
