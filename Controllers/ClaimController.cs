@@ -11,7 +11,7 @@ namespace CMCS.Controllers
 
         string _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Lecturers.json");
 
-        private List<Lecturer> LoadLecturers()
+        public List<Lecturer> LoadLecturers()
         {
             if (!System.IO.File.Exists(_filePath))
             {
@@ -27,7 +27,7 @@ namespace CMCS.Controllers
             return JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
         }
 
-        private void SaveLecturers(List<Lecturer> lecturers)
+        public void SaveLecturers(List<Lecturer> lecturers)
         {
             var json = JsonSerializer.Serialize(lecturers, new JsonSerializerOptions { WriteIndented = true });
             System.IO.File.WriteAllText(_filePath, json);

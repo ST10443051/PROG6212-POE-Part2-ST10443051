@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "LecturerID": 1,
+    "name": "Aidan",
+    "email": "aidanbnks@gmail.com",
+    "claimIDs": [
+      {
+        "claimID": 1,
+        "notes": "Claim number 1",
+        "hoursWorked": 12,
+        "hourlyRate": 100,
+        "status": "Pending",
+        "date": "2025-10-22T19:20:26.4565595+02:00",
+        "lecturerID": 1,
+        "SupportDocumentIDs": []
+      }
+    ]
+  }
+]

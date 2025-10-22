@@ -13,10 +13,19 @@ namespace CMCS.Controllers
 
         string _filePathApp = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Approvers.json");
 
-        string _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Lecturers.json");
+        string _filePath;
 
+        public ApproverController()
+        {
+            _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Lecturers.json");
+        }
 
-        private List<Lecturer> LoadLecturers()
+        public ApproverController(string filePath)//FOR TESTING
+        {
+            _filePath = filePath ?? Path.Combine(Directory.GetCurrentDirectory(), "Data", "Lecturers.json");
+        }
+
+        public List<Lecturer> LoadLecturers()
         {
             if (!System.IO.File.Exists(_filePath))
             {
@@ -32,7 +41,7 @@ namespace CMCS.Controllers
             return JsonSerializer.Deserialize<List<Lecturer>>(json, options) ?? new List<Lecturer>();
         }
 
-        private void SaveLecturers(List<Lecturer> lecturers)
+        public void SaveLecturers(List<Lecturer> lecturers)
         {
             var json = JsonSerializer.Serialize(lecturers, new JsonSerializerOptions { WriteIndented = true });
             System.IO.File.WriteAllText(_filePath, json);
