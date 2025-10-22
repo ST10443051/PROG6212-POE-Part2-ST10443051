@@ -8,8 +8,7 @@
 
 @* Card to create Lecturer profile *@
 <div class="card" style="margin-bottom: 20px">
-    <h2>Add new Lecturer</h2>
-    <a asp-controller="Lecturer" class="btn-action" asp-action="Create">Add</a>
+    <a asp-controller="Lecturer" class="btn-action" asp-action="Create">Create New Lecturer</a>
 </div>
 
 @if (Model == null || !Model.Any())
@@ -18,20 +17,21 @@
 }
 else
 {
+    <hr/>
     <table class="table">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(model => model.LecturerID)</th>
-                <th>@Html.DisplayNameFor(model => model.name)</th>
-                <th>@Html.DisplayNameFor(model => model.email)</th>
-                <th>Actions</th>
+                <th>LecturerID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Functions</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.LecturerID</td>
+                    <th>@item.LecturerID</th>
                     <td>@item.name</td>
                     <td>@item.email</td>
                     <td>

@@ -4,13 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
+<h1>Support Documents for ClaimID @ViewBag.ClaimID</h1>
+
 <div class="card" style="margin-bottom: 20px">
-    <h2>Add Support Document</h2>
     <a asp-controller="SupportDocument" asp-action="Create"
        asp-route-lecturerId="@ViewBag.LecturerID"
        asp-route-claimId="@ViewBag.ClaimID"
        class="btn-action">
-       Add
+        Upload Support Document
     </a>
 </div>
 
@@ -21,26 +22,14 @@
 }
 else
 {
-    <h3>Documents for @ViewBag.ClaimID</h3>
-
+    <hr/>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.supportDocumentID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fileName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fileType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.uploadDate)
-            </th>
-            <th>
-                Actions
-            </th>
+            <th>SupportDocumentID</th><th>File Name</th>
+            <th>File Type</th>
+            <th>Upload Date</th>
+            <th>Functions</th>
         </tr>
     </thead>
 
@@ -48,7 +37,7 @@ else
         @foreach (var document in Model)
         {
             <tr>
-                <td>@document.supportDocumentID</td>
+                <th>@document.supportDocumentID</th>
                 <td>@document.fileName</td>
                 <td>@document.fileType</td>
                 <td>@document.uploadDate</td>

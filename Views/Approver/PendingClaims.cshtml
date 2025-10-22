@@ -36,7 +36,7 @@ else
             @foreach (var claim in Model)
             {
                 <tr>
-                    <td>@claim.LecturerID (@claim.LecturerName)</td>
+                    <th>@claim.LecturerID (@claim.LecturerName)</th>
                     <td>@claim.ClaimID</td>
                     <td>@claim.Notes</td>
                     <td>@claim.HoursWorked</td>
@@ -59,6 +59,13 @@ else
                             Decline
                             </button>
                         </form>
+
+                        <a asp-controller="SupportDocument" asp-action="IndexApprover"
+                           asp-route-lecturerId="@claim.LecturerID"
+                           asp-route-claimId="@claim.ClaimID"
+                           class="btn-action">
+                            View Docs
+                        </a>
                     </td>
                 </tr>
             }

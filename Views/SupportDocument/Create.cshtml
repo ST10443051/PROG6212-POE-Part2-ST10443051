@@ -4,9 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>SupportDocument</h4>
+<h1>Upload Support Document</h1>
 <hr />
 
 @* Creation screen for adding a support document tied to the specific claim *@
@@ -24,8 +22,11 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Upload" class="btn btn-primary" /> |
-                <a asp-action="Index" asp-route-lecturerId="@ViewBag.LecturerID" asp-route-claimId="@ViewBag.ClaimID" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Upload" class="btn-action" />
+                <a asp-action="Index" 
+                 asp-route-lecturerId="@ViewBag.LecturerID" 
+                 asp-route-claimId="@ViewBag.ClaimID" 
+                 class="btn-action">Cancel</a>
             </div>
         </form>
     </div>

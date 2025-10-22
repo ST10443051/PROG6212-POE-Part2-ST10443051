@@ -4,33 +4,32 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create a new lecturer</h1>
 
-<h4>Lecturer</h4>
 <hr />
 @* Creation screen for the selected lecturer profile *@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
+                <label asp-for="name" class="control-label">Name:</label>
                 <input asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
+                <label asp-for="email" class="control-label">Email:</label>
                 <input asp-for="email" class="form-control" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
+           
+            <input type="submit" value="Save Lecturer" class="btn-action" />
+            
+            
+            <a asp-action="Index" class="btn-action">
+            Cancel</a>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

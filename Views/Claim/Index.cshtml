@@ -3,7 +3,7 @@
     ViewData["Title"] = "Claim";
 }
 
-<h1>Claims for @ViewBag.LecturerName</h1>
+<h1>Claims for @ViewBag.LecturerName (LecturerID: @ViewBag.LecturerID)</h1>
 
 <div class="card" style="margin-bottom:20px">
     <a asp-action="Create" asp-route-LecturerID="@ViewBag.LecturerID" class="btn-action">Create New Claim</a>
@@ -15,29 +15,28 @@
 }
 else
 {
-    <h3>Claims for @ViewBag.LecturerName</h3>
-
+    <hr />
     <table class="table">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(m => m.claimID)</th>
-                <th>@Html.DisplayNameFor(m => m.notes)</th>
-                <th>@Html.DisplayNameFor(m => m.date)</th>
-                <th>@Html.DisplayNameFor(m => m.hoursWorked)</th>
-                <th>@Html.DisplayNameFor(m => m.hourlyRate)</th>
-                <th>@Html.DisplayNameFor(m => m.status)</th>
-                <th>Actions</th>
+                <th>ClaimID</th>
+                <th>Notes</th>
+                <th>Date of Submission</th>
+                <th>Hours Worked</th>
+                <th>Hourly Rate</th>
+                <th>Claim Status</th>
+                <th>Functions</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var claim in Model)
             {
                 <tr>
-                    <td>@claim.claimID</td>
+                    <th>@claim.claimID</th>
                     <td>@claim.notes</td>
                     <td>@claim.date</td>
                     <td>@claim.hoursWorked</td>
-                    <td>@claim.hourlyRate</td>
+                    <td>R @claim.hourlyRate</td>
                     <td>@claim.status</td>
                     <td>
                         <a asp-controller="SupportDocument" asp-action="Index"

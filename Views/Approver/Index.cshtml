@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<CMCS.Models.Approver>
 
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,8 +9,7 @@
 
 @* Card to create Lecturer profile *@
 <div class="card" style="margin-bottom: 20px">
-    <h2>Add new Approver</h2>
-    <a asp-controller="Approver" class="btn-action" asp-action="Create">Add</a>
+    <a asp-controller="Approver" class="btn-action" asp-action="Create">Create new Approver</a>
 </div>
 
 @if (Model == null || !Model.Any())
@@ -18,12 +18,13 @@
 }
 else
 {
+    <hr/>
     <table class="table">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(model => model.ApproverID)</th>
-                <th>@Html.DisplayNameFor(model => model.name)</th>
-                <th>@Html.DisplayNameFor(model => model.role)</th>
+                <th>ApproverID</th>
+                <th>Name</th>
+                <th>Role</th>
                 <th>Functions</th>
             </tr>
         </thead>
@@ -31,7 +32,7 @@ else
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.ApproverID</td>
+                    <th>@item.ApproverID</th>
                     <td>@item.name</td>
                     <td>@item.role</td>
                     <td>
@@ -45,6 +46,7 @@ else
                            class="btn-action">
                             Delete
                         </a>
+
                     </td>
                 </tr>
             }

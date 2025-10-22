@@ -9,25 +9,29 @@
     <input type="hidden" name="LecturerID" value="@ViewBag.LecturerID" />
 
     <div class="form-group">
-        <label asp-for="notes"></label>
+        <label asp-for="notes">Note:</label>
         <input asp-for="notes" class="form-control" />
         <span asp-validation-for="notes" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="hoursWorked"></label>
+        <label asp-for="hoursWorked">Hours Worked:</label>
         <input asp-for="hoursWorked" class="form-control" />
         <span asp-validation-for="hoursWorked" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="hourlyRate"></label>
+        <label asp-for="hourlyRate">Hourly Rate:</label>
         <input asp-for="hourlyRate" class="form-control" />
         <span asp-validation-for="hourlyRate" class="text-danger"></span>
     </div>
 
+
     <button type="submit" class="btn-action">Save Claim</button>
-    <a asp-action="Index" asp-route-LecturerId="@ViewBag.LecturerID" class="btn-action">Cancel</a>
+
+    <a asp-action="Index" 
+    asp-route-lecturerId="@ViewBag.LecturerID" 
+    class="btn-action">Cancel</a>
 </form>
 
 @section Scripts {

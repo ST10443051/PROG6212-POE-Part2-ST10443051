@@ -225,5 +225,28 @@ namespace CMCS.Controllers
 
             return RedirectToAction("Index", new { lecturerId, claimId });
         }
+
+        public IActionResult IndexApprover(int lecturerId, int claimId)
+        {
+            var load = LoadLecturers();
+            var lecturer = load.FirstOrDefault(l => l.LecturerID == lecturerId);
+            if (lecturer == null)
+            {
+                return NotFound("Lecturer not found");
+            }
+
+            var claim = lecturer.claimIDs.FirstOrDefault(c => c.claimID == claimId);
+            if (claim == null)
+            {
+                return NotFound("Claim not found");
+            }
+
+            ViewBag.LecturerID = lecturer.LecturerID;
+            ViewBag.ClaimID = claim.claimID;
+
+            ViewBag.LecturerName = lecturer.name;
+
+            return View(claim.SupportDocumentIDs);
+        }
     }
 }

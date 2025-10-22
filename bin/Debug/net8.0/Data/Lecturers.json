@@ -29,10 +29,19 @@
         "notes": "number 2",
         "hoursWorked": 456,
         "hourlyRate": 44555,
-        "status": "Pending",
+        "status": "Declined",
         "date": "2025-10-22T13:01:43.1453521+02:00",
         "lecturerID": 1,
-        "SupportDocumentIDs": []
+        "SupportDocumentIDs": [
+          {
+            "supportDocumentID": 1,
+            "fileName": "Test Word Docuemnt",
+            "fileType": "docx",
+            "filepath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\SupportDocuments\\Test Word Docuemnt.docx",
+            "uploadDate": "2025-10-22T17:14:56.228194+02:00",
+            "claimID": 3
+          }
+        ]
       }
     ]
   },
@@ -40,17 +49,6 @@
     "LecturerID": 2,
     "name": "John",
     "email": "cafaw82478@birige.com",
-    "claimIDs": [
-      {
-        "claimID": 1,
-        "notes": "Anal pegging",
-        "hoursWorked": 12,
-        "hourlyRate": 1222222,
-        "status": "Declined",
-        "date": "2025-10-22T12:26:26.818599+02:00",
-        "lecturerID": 2,
-        "SupportDocumentIDs": []
-      }
-    ]
+    "claimIDs": []
   }
 ]

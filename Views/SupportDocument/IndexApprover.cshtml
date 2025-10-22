@@ -4,73 +4,59 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Support Documents for ClaimID 1</h1>
+@* Table for all added support documents for the selected claim *@
+@if (Model == null || !Model.Any())
+{
+    <h3>No documents uploaded :(</h3>
+}
+else
+{
+    <h3>Documents for ClaimID @ViewBag.ClaimID</h3>
 
-@* Table for all added support documents for the selected claim (Approver version) *@
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.supportDocumentID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fileName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fileType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.uploadDate)
-            </th>
-            <th>
-                Functions
-            </th>
-        </tr>
-    </thead>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.supportDocumentID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fileName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fileType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.uploadDate)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
 
-    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
-
-    <tbody>
-        <tr>
-            <td>
-                0
-            </td>
-            <td>
-                ExampleFile
-            </td>
-            <td>
-                PDF
-            </td>
-            <td>
-                17-Sep-25 12:02 PM
-            </td>
-            <td class="actions">
-                <a asp-controller="SupportDocument" class="btn-action" asp-action="ViewDocumentApprover">View Document</a>
-            </td>
-        </tr>
-@* @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.supportDocumentID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fileName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fileType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.uploadDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-} *@
-    </tbody>
-</table>
-
-<a asp-controller="Approver" class="btn-action" asp-action="PendingClaims">Back to Pending Claims Table</a>
+        <tbody>
+            @foreach (var document in Model)
+            {
+                <tr>
+                    <td>@document.supportDocumentID</td>
+                    <td>@document.fileName</td>
+                    <td>@document.fileType</td>
+                    <td>@document.uploadDate</td>
+                    <td>
+                        <a asp-controller="SupportDocument" asp-action="ViewDocument"
+                           asp-route-lecturerId="@ViewBag.LecturerID"
+                           asp-route-claimId="@ViewBag.ClaimID"
+                           asp-route-supportDocumentID="@document.supportDocumentID"
+                           class="btn-action">
+                            View Document
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<a asp-controller="Approver"
+   asp-action="PendingClaims"
+   class="btn-action">Back to Pending Claims Table </a>
 
