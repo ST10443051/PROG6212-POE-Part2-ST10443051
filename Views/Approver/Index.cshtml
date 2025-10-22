@@ -24,7 +24,7 @@ else
                 <th>@Html.DisplayNameFor(model => model.ApproverID)</th>
                 <th>@Html.DisplayNameFor(model => model.name)</th>
                 <th>@Html.DisplayNameFor(model => model.role)</th>
-                <th>Actions</th>
+                <th>Functions</th>
             </tr>
         </thead>
         <tbody>
@@ -35,10 +35,9 @@ else
                     <td>@item.name</td>
                     <td>@item.role</td>
                     <td>
-                        <a asp-controller="Approver" asp-action="Index"
-                           asp-route-approverId="@item.ApproverID"
+                        <a asp-controller="Approver" asp-action="PendingClaims"
                            class="btn-action">
-                            View Functions
+                            View Pending Claims
                         </a>
 
                         <a asp-controller="Approver" asp-action="Delete"

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CMCS.Models.Claim>
+﻿@model IEnumerable<dynamic>// (OpenAI, 2025)
 
 @{
     ViewData["Title"] = "PendingClaims";
@@ -8,74 +8,62 @@
 
 @* Table for all the pending claims *@
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.claimID)
-            </th>
-            <th>
-                Lecturer Name
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.hoursWorked)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.hourlyRate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.status)
-            </th>
-            <th>
-                Functions
-            </th>
-        </tr>
-    </thead>
+@if (Model == null || !Model.Any())
+{
+    <h3>No pending claims yet :(</h3>
+}
+else
+{
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-info">@TempData["Message"]</div>
+    }
 
-    @* Hard-coded values into rows (TEMPORARY SOLUTION!!!!!!!!) *@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Lecturer ID</th>
+                <th>Claim ID</th>
+                <th>Notes</th>
+                <th>Hours Worked</th>
+                <th>Hourly Rate</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td>@claim.LecturerID (@claim.LecturerName)</td>
+                    <td>@claim.ClaimID</td>
+                    <td>@claim.Notes</td>
+                    <td>@claim.HoursWorked</td>
+                    <td>R @claim.HourlyRate</td>
+                    <td>R @claim.Amount</td>
+                    <td>@claim.Status</td>
+                    <td>
+                        <form asp-controller="Approver" asp-action="ApproveClaim" method="post">
+                            <input type="hidden" name="lecturerId" value="@claim.LecturerID" />
+                            <input type="hidden" name="claimId" value="@claim.ClaimID" />
+                            <button type="submit" class="btn-verification btn-approve">
+                            Approve
+                            </button>
+                        </form>
 
-    <tbody>
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                John Doe
-            </td>
-            <td>
-                R 5000
-            </td>
-            <td>
-                Pending
-            </td>
-            <td class="btn-verification">
-                <a asp-controller="Approver" class="btn-verification" asp-action="Functions">Verify</a>
-                <a asp-controller="Approver" class="btn-verification" asp-action="DeclinePOST">Decline</a>
-                <a asp-controller="SupportDocument" class="btn-verification" asp-action="IndexApprover">View Documents</a>
-            </td>
-        </tr>
-@* @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.claimID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-} *@
-    </tbody>
-</table>
+                        <form asp-controller="Approver" asp-action="DeclineClaim" method="post">
+                            <input type="hidden" name="lecturerId" value="@claim.LecturerID" />
+                            <input type="hidden" name="claimId" value="@claim.ClaimID" />
+                            <button type="submit" class="btn-verification btn-decline">
+                            Decline
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
-<a asp-controller="Approver" class="btn-action" asp-action="Functions">Back to Functions</a>
+<a asp-controller="Approver" asp-action="Index" class="btn-action">Back to Approvers Table</a>

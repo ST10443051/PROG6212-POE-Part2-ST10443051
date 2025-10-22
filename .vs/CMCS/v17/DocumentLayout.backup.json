@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\controllers\\lecturercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:controllers\\lecturercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\controllers\\approvercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:controllers\\approvercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\views\\approver\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:views\\approver\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\views\\approver\\pendingclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:views\\approver\\pendingclaims.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,38 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\Approver\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Approver\\Create.cshtml",
-              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\Approver\\Create.cshtml",
-              "RelativeToolTip": "Views\\Approver\\Create.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T16:32:22.863Z"
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T10:10:14.024Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PendingClaims.cshtml",
+              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\Approver\\PendingClaims.cshtml",
+              "RelativeDocumentMoniker": "Views\\Approver\\PendingClaims.cshtml",
+              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Views\\Approver\\PendingClaims.cshtml",
+              "RelativeToolTip": "Views\\Approver\\PendingClaims.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:42:54.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ApproverController.cs",
               "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\ApproverController.cs",
               "RelativeDocumentMoniker": "Controllers\\ApproverController.cs",
               "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\ApproverController.cs",
               "RelativeToolTip": "Controllers\\ApproverController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAJgAAAAAAAAAAADwv6cAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T15:49:17.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LecturerController.cs",
-              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\LecturerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LecturerController.cs",
-              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\LecturerController.cs",
-              "RelativeToolTip": "Controllers\\LecturerController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAowBgAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T15:49:15.451Z",
+              "WhenOpened": "2025-10-21T15:49:17.154Z",
               "EditorCaption": ""
             }
           ]
