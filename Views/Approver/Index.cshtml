@@ -7,11 +7,14 @@
 
 <h1>Approvers</h1>
 
-@* Card to create Lecturer profile *@
+<!-- View to see all approvers (IIE, 2025) -->
+
+<!-- Card container for the 'Create new Approver' button (IIE, 2025)  -->
 <div class="card" style="margin-bottom: 20px">
     <a asp-controller="Approver" class="btn-action" asp-action="Create">Create new Approver</a>
 </div>
 
+<!-- If no approvers exist, show message (IIE, 2025) -->
 @if (Model == null || !Model.Any())
 {
     <h3>No Approvers :(</h3>
@@ -19,6 +22,7 @@
 else
 {
     <hr/>
+    <!-- Table displaying all approvers (IIE, 2025) -->
     <table class="table">
         <thead>
             <tr>

@@ -1,15 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{98224FE7-58B5-4510-9AA6-362CC539FF83}|..\\CMCSUnitTesting\\CMCSUnitTesting.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcsunittesting\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|c:\\users\\aidan\\onedrive\\vc y2\\semester 2\\prog6212\\prog6212 st10443051 poe part 2\\cmcs p2\\controllers\\approvercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{98A18CC8-9D6F-4B73-B590-C0D06442952F}|CMCS.csproj|solutionrelative:controllers\\approvercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -17,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Testing.cs",
-              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCSUnitTesting\\Testing.cs",
-              "RelativeDocumentMoniker": "..\\CMCSUnitTesting\\Testing.cs",
-              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCSUnitTesting\\Testing.cs",
-              "RelativeToolTip": "..\\CMCSUnitTesting\\Testing.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T16:22:19.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApproverController.cs",
-              "DocumentMoniker": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\ApproverController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ApproverController.cs",
-              "ToolTip": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\Controllers\\ApproverController.cs",
-              "RelativeToolTip": "Controllers\\ApproverController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAwwBYAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T17:09:16.415Z",
-              "EditorCaption": ""
             }
           ]
         }

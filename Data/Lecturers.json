@@ -6,13 +6,41 @@
     "claimIDs": [
       {
         "claimID": 1,
-        "notes": "Claim number 1",
-        "hoursWorked": 12,
-        "hourlyRate": 100,
-        "status": "Pending",
-        "date": "2025-10-22T19:20:26.4565595+02:00",
+        "notes": "This is my claim!",
+        "hoursWorked": 6,
+        "hourlyRate": 1000,
+        "status": "Approved",
+        "date": "2025-10-23T13:28:12.5811626+02:00",
         "lecturerID": 1,
-        "SupportDocumentIDs": []
+        "SupportDocumentIDs": [
+          {
+            "supportDocumentID": 1,
+            "fileName": "PROG6212 Part 2 Checklist 2 (1)",
+            "fileType": "pdf",
+            "filepath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\SupportDocuments\\PROG6212 Part 2 Checklist 2 (1).pdf",
+            "uploadDate": "2025-10-23T13:30:33.443575+02:00",
+            "claimID": 1
+          }
+        ]
+      },
+      {
+        "claimID": 2,
+        "notes": "This is my second claim!!!!!",
+        "hoursWorked": 2,
+        "hourlyRate": 250,
+        "status": "Pending",
+        "date": "2025-10-23T18:08:46.2180951+02:00",
+        "lecturerID": 1,
+        "SupportDocumentIDs": [
+          {
+            "supportDocumentID": 1,
+            "fileName": "IPMA6212Ea",
+            "fileType": "pdf",
+            "filepath": "C:\\Users\\aidan\\OneDrive\\VC Y2\\Semester 2\\PROG6212\\PROG6212 ST10443051 POE Part 2\\CMCS P2\\SupportDocuments\\IPMA6212Ea.pdf",
+            "uploadDate": "2025-10-23T18:09:10.4270448+02:00",
+            "claimID": 2
+          }
+        ]
       }
     ]
   }

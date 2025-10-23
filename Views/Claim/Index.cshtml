@@ -3,12 +3,16 @@
     ViewData["Title"] = "Claim";
 }
 
+<!-- View to see all claims (IIE, 2025) -->
+
 <h1>Claims for @ViewBag.LecturerName (LecturerID: @ViewBag.LecturerID)</h1>
 
+<!-- Card container for the 'Create New Claim' button (IIE, 2025)  -->
 <div class="card" style="margin-bottom:20px">
     <a asp-action="Create" asp-route-LecturerID="@ViewBag.LecturerID" class="btn-action">Create New Claim</a>
 </div>
 
+<!-- If no claims exist, show message (IIE, 2025) -->
 @if (Model == null || !Model.Any())
 {
     <h3>No claims yet :(</h3>
@@ -16,6 +20,7 @@
 else
 {
     <hr />
+    <!-- Table displaying all approvers (IIE, 2025) -->
     <table class="table">
         <thead>
             <tr>

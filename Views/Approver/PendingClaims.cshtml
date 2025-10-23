@@ -1,4 +1,4 @@
-﻿@model IEnumerable<dynamic>// (OpenAI, 2025)
+﻿@model IEnumerable<dynamic>//(OpenAI, 2025)
 
 @{
     ViewData["Title"] = "PendingClaims";
@@ -6,8 +6,9 @@
 
 <h1>Pending Claims</h1>
 
-@* Table for all the pending claims *@
+@* Table to display all the pending claims (from all lecturers) and can either delince or approve each pending claim*@
 
+<!-- If no pending claims exist, show message (IIE, 2025) -->
 @if (Model == null || !Model.Any())
 {
     <h3>No pending claims yet :(</h3>
@@ -19,6 +20,7 @@ else
         <div class="alert alert-info">@TempData["Message"]</div>
     }
 
+    <!-- Table displaying all approvers (IIE, 2025) -->
     <table class="table">
         <thead>
             <tr>

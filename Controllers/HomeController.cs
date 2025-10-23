@@ -15,7 +15,7 @@ namespace CMCS.Controllers
             _logger = logger;
         }
 
-        //ALl the methods listed below all just return each of the corresponding view (temporary)
+        //ALl the methods listed below all just return each of the corresponding view
 
         public IActionResult Index()
         {

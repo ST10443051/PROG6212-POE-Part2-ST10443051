@@ -6,6 +6,8 @@
 
 <h1>Support Documents for ClaimID @ViewBag.ClaimID</h1>
 
+<!-- View to see all supprt documents (IIE, 2025) -->
+<!-- Card container for the 'Upload Support Document' button (IIE, 2025)  -->
 <div class="card" style="margin-bottom: 20px">
     <a asp-controller="SupportDocument" asp-action="Create"
        asp-route-lecturerId="@ViewBag.LecturerID"
@@ -15,7 +17,7 @@
     </a>
 </div>
 
-@* Table for all added support documents for the selected claim *@
+<!-- If no support documents exist, show message (IIE, 2025) -->
 @if (Model == null || !Model.Any())
 {
     <h3>No documents uploaded :(</h3>
@@ -23,6 +25,7 @@
 else
 {
     <hr/>
+    <!-- Table displaying all support documents (IIE, 2025) -->
 <table class="table">
     <thead>
         <tr>

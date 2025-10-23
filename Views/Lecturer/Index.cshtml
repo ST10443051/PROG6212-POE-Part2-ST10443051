@@ -6,11 +6,13 @@
 
 <h1>Lecturers</h1>
 
-@* Card to create Lecturer profile *@
+<!-- View to see all lecturers (IIE, 2025) -->
+<!-- Card container for the 'Create New Lecturer' button (IIE, 2025)  -->
 <div class="card" style="margin-bottom: 20px">
     <a asp-controller="Lecturer" class="btn-action" asp-action="Create">Create New Lecturer</a>
 </div>
 
+<!-- If no lecturers exist, show message (IIE, 2025) -->
 @if (Model == null || !Model.Any())
 {
     <h3>No lecturers :(</h3>
@@ -18,6 +20,7 @@
 else
 {
     <hr/>
+    <!-- Table displaying all lecturers (IIE, 2025) -->
     <table class="table">
         <thead>
             <tr>
